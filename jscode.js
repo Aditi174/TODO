@@ -9,14 +9,14 @@ add_button.addEventListener("click",() => {
 
     localStorage.setItem("keys",JSON.stringify(array));
 
-    
-
     input.value = ""
 
     display()
 })
 
 function display(){
+
+    whole.innerHTML = "";
 
     for(const i of array){
         const list = document.createElement("li");
