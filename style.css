@@ -46,5 +46,11 @@ button {
     cursor: pointer;
  } 
 
+ .items span{
+    position: absolute;
+    right: 45px;
+    cursor: pointer;
+ } 
+
 
  
