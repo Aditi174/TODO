@@ -1,6 +1,7 @@
 const input = document.getElementById("inputs");
 const whole = document.getElementById("item");
 const add_button = document.getElementById("button");
+
 let array = JSON.parse(localStorage.getItem("keys")) || [];
 
 add_button.addEventListener("click", () => {
@@ -59,14 +60,24 @@ function deleteItem(i) {
 
 function edititems(i) {
     const index = array.indexOf(i);
-    
+    const express = document.createElement("div");
+    express.className = "overlay";
+    document.body.appendChild(express);
+
+    const model = document.createElement("div");
+    model.className = "Model";
+    document.body.appendChild(model)
+    model.style.display = "block"; 
+
     const newinput = document.createElement("input");
     newinput.type = "text";
-    newinput.value = array[index]; 
+    newinput.value = i;
+
 
     const save_button = document.createElement("button");
     save_button.type = "submit";
     save_button.textContent = "save";
+
 
     save_button.addEventListener("click", () => {
         const updatedValue = newinput.value;
@@ -74,11 +85,11 @@ function edititems(i) {
 
         localStorage.setItem("keys", JSON.stringify(array));
         display();
+        model.style.display = "none"; 
     });
 
-    whole.innerHTML = "";
-    whole.appendChild(newinput);
-    whole.appendChild(save_button);
+    model.appendChild(newinput);
+    model.appendChild(save_button);
 }
 
 
