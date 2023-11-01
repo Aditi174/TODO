@@ -86,6 +86,7 @@ function edititems(i) {
         localStorage.setItem("keys", JSON.stringify(array));
         display();
         model.style.display = "none"; 
+        express.style.opacity = 0;
     });
 
     model.appendChild(newinput);
