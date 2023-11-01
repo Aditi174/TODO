@@ -26,7 +26,7 @@ function display() {
         list.appendChild(icon);
 
         let editicon = document.createElement("span");
-        editicon.className = "material-symbols-outlined"; // Use a valid CSS class name
+        editicon.className = "material-symbols-outlined"; 
         editicon.textContent = "edit";
         list.appendChild(editicon);
 
@@ -39,7 +39,7 @@ function display() {
         whole.appendChild(list);
 
         editicon.addEventListener('click', () => {
-            edititems(new_i);
+            edititems(i);
         })
 
         whole.appendChild(list)
@@ -59,10 +59,10 @@ function deleteItem(i) {
 
 function edititems(i) {
     const index = array.indexOf(i);
-
+    
     const newinput = document.createElement("input");
     newinput.type = "text";
-    newinput.value = user_input;
+    newinput.value = array[index]; 
 
     const save_button = document.createElement("button");
     save_button.type = "submit";
@@ -70,7 +70,7 @@ function edititems(i) {
 
     save_button.addEventListener("click", () => {
         const updatedValue = newinput.value;
-        array[array.indexOf(item)] = updatedValue;
+        array[index] = updatedValue;
 
         localStorage.setItem("keys", JSON.stringify(array));
         display();
@@ -80,6 +80,7 @@ function edititems(i) {
     whole.appendChild(newinput);
     whole.appendChild(save_button);
 }
+
 
 
 display();
