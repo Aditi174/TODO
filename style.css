@@ -3,6 +3,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 .container {
     width: 340px;
     background-color: #f1ecec;
@@ -58,7 +63,7 @@ button {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
-    z-index: -1;
+    z-index: 0;
     opacity: 1; 
     transition: 1s;
 }
@@ -84,6 +89,16 @@ button {
     height: 35px;
 }
 
+@media (max-width: 600px) {
+    .container {
+        width: 100%; 
+        margin-left: 0; 
+    }
 
+    .Model {
+        width: 80%; 
+        left: 10%;
+    }
+}
 
  
