@@ -87,6 +87,7 @@ function edititems(i) {
         display();
         model.style.display = "none"; 
         express.style.opacity = 0;
+        express.style.display = "none"
     });
 
     model.appendChild(newinput);
